@@ -18,9 +18,20 @@
 						"text": "GET OUR LATEST ITEMS FOR 50% OFF",
 						"link": ""
 					}
+				},
+				"announcement-bar-2": {
+					"type": "announcement",
+					"settings": {
+						"text": "FIND THE BEST WEDDING JEWELRY OF THE SEASON",
+						"link": ""
+					}
 				}
 			},
-			"block_order": ["announcement-bar-0", "announcement-bar-1"],
+			"block_order": [
+				"announcement-bar-0",
+				"announcement-bar-1",
+				"announcement-bar-2"
+			],
 			"settings": {
 				"color_scheme": "scheme-3",
 				"show_line_separator": false,
