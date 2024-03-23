@@ -1,0 +1,156 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/jewelry_box.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify:\/\/collections\/all",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 10,
+            "color_scheme": "scheme-2",
+            "text_alignment_mobile": "left"
+          }
+        }
+      },
+      "block_order": [
+        "slide-0"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "small",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "collection_list_CKyQxi": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_mDbtRT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "coin-bezels"
+          }
+        },
+        "featured_collection_rLqhdH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "chains-1"
+          }
+        },
+        "featured_collection_BeVrDH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rings-1"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_mDbtRT",
+        "featured_collection_rLqhdH",
+        "featured_collection_BeVrDH"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_hnLwFX": {
+      "type": "featured-product",
+      "blocks": {
+        "text_3Dxd8U": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_HmJnrf": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_f6ThER": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_cb8jhM": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_wrFLTA": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_whDW43": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_LW7BX8": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_3Dxd8U",
+        "title_HmJnrf",
+        "price_f6ThER",
+        "variant_picker_cb8jhM",
+        "quantity_selector_wrFLTA",
+        "buy_buttons_whDW43",
+        "share_LW7BX8"
+      ],
+      "settings": {
+        "product": "coin-variant-type-gold",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "collection_list_CKyQxi",
+    "featured_product_hnLwFX"
+  ]
+}
