@@ -5,6 +5,13 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "link_list_MxzNcH": {
+          "type": "link_list",
+          "settings": {
+            "heading": "QUICK LINKS",
+            "menu": "footer"
+          }
+        },
         "link_list_Y3iPUP": {
           "type": "link_list",
           "settings": {
@@ -17,19 +24,12 @@
           "settings": {
             "show_social": true
           }
-        },
-        "link_list_MxzNcH": {
-          "type": "link_list",
-          "settings": {
-            "heading": "QUICK LINKS",
-            "menu": "footer"
-          }
         }
       },
       "block_order": [
+        "link_list_MxzNcH",
         "link_list_Y3iPUP",
-        "brand_information_pYRPcH",
-        "link_list_MxzNcH"
+        "brand_information_pYRPcH"
       ],
       "settings": {
         "color_scheme": "scheme-3",
