@@ -5,6 +5,13 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "text_dzMBwJ": {
+          "type": "text",
+          "settings": {
+            "heading": "FLINTKSKI JEWELRY AND ACCESSORIES LLC",
+            "subtext": ""
+          }
+        },
         "link_list_MxzNcH": {
           "type": "link_list",
           "settings": {
@@ -20,6 +27,7 @@
         }
       },
       "block_order": [
+        "text_dzMBwJ",
         "link_list_MxzNcH",
         "brand_information_pYRPcH"
       ],
