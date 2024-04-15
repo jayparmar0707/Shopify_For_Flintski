@@ -12,6 +12,13 @@
             "menu": "footer"
           }
         },
+        "link_list_Y3iPUP": {
+          "type": "link_list",
+          "settings": {
+            "heading": "OUR POLICIES",
+            "menu": "our-policies"
+          }
+        },
         "brand_information_pYRPcH": {
           "type": "brand_information",
           "settings": {
@@ -21,6 +28,7 @@
       },
       "block_order": [
         "link_list_MxzNcH",
+        "link_list_Y3iPUP",
         "brand_information_pYRPcH"
       ],
       "settings": {
