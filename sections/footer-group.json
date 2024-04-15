@@ -11,10 +11,17 @@
             "heading": "QUICK LINKS",
             "menu": "footer"
           }
+        },
+        "brand_information_pYRPcH": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
         }
       },
       "block_order": [
-        "link_list_MxzNcH"
+        "link_list_MxzNcH",
+        "brand_information_pYRPcH"
       ],
       "settings": {
         "color_scheme": "scheme-3",
