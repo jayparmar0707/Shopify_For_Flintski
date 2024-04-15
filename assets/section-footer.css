@@ -11,6 +11,10 @@
   display: block;
 }
 
+.footer-block {
+  text-align:center;
+}
+
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
