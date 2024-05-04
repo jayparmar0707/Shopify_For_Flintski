@@ -6,7 +6,7 @@
         {%- for product in recommendations.products -%}
         <li>
           <a href="{{ product.url }}">
-            <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.featured_image.alt }}" />
+            <img src="{{ product.featured_image | image_url: '300x300' }}" alt="{{ product.featured_image.alt }}" width="300" height="300" />
             <p>{{ product.title }}</p>
             <p>{{ product.price | money}}</p>
           </a>
