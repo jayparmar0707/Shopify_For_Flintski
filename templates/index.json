@@ -61,19 +61,19 @@
         "featured_collection_mDbtRT": {
           "type": "featured_collection",
           "settings": {
-            "collection": "coin-bezels"
+            "collection": "main-coin-bezels"
           }
         },
         "featured_collection_rLqhdH": {
           "type": "featured_collection",
           "settings": {
-            "collection": "chains"
+            "collection": "main-coin-motif"
           }
         },
         "featured_collection_BeVrDH": {
           "type": "featured_collection",
           "settings": {
-            "collection": "rings"
+            "collection": "main-rings"
           }
         }
       },
