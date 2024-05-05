@@ -7,17 +7,17 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/jewelry_box.jpg",
-            "heading": "",
+            "heading": "<strong>FLINTSKI JEWELRY<\/strong>",
             "heading_size": "h1",
-            "subheading": "",
+            "subheading": "<strong>Latest coin bezels, motif, and jewelry.<\/strong>",
             "button_label": "",
-            "link": "shopify:\/\/collections\/all",
+            "link": "",
             "button_style_secondary": false,
-            "box_align": "middle-left",
-            "show_text_box": false,
-            "text_alignment": "left",
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
             "image_overlay_opacity": 10,
-            "color_scheme": "scheme-2",
+            "color_scheme": "scheme-1",
             "text_alignment_mobile": "left"
           }
         },
@@ -32,7 +32,25 @@
             "link": "",
             "button_style_secondary": false,
             "box_align": "bottom-left",
-            "show_text_box": false,
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_WEW6jR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/coins.jpg",
+            "heading": "Coin Bezels",
+            "heading_size": "h1",
+            "subheading": "Shop from our wide collection of coin bezels and bullion bars",
+            "button_label": "Shop now",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
             "color_scheme": "scheme-1",
@@ -42,7 +60,8 @@
       },
       "block_order": [
         "slide-0",
-        "slide_Fx7z8y"
+        "slide_Fx7z8y",
+        "slide_WEW6jR"
       ],
       "settings": {
         "layout": "full_bleed",
