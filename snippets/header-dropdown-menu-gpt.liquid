@@ -1,0 +1,112 @@
+{% comment %}
+  Renders a standard dropdown style menu for the header.
+  Now hides any collection links whose all_products_count == 0.
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      {%- assign skip = false -%}
+      {%- if link.type == 'collection_link' and link.object and link.object.all_products_count == 0 -%}
+        {%- assign skip = true -%}
+      {%- endif -%}
+
+      {%- unless skip -%}
+      <li>
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}class="header__active-menu-item"{% endif -%}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {% render 'icon-caret' %}
+              </summary>
+              <ul
+                id="HeaderMenu-MenuList-{{ forloop.index }}"
+                class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+                role="list"
+                tabindex="-1"
+              >
+                {%- for childlink in link.links -%}
+                  {%- assign child_skip = false -%}
+                  {%- if childlink.type == 'collection_link' and childlink.object and childlink.object.all_products_count == 0 -%}
+                    {%- assign child_skip = true -%}
+                  {%- endif -%}
+
+                  {%- unless child_skip -%}
+                  <li>
+                    {%- if childlink.links == blank -%}
+                      <a
+                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                        href="{{ childlink.url }}"
+                        class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                        {% if childlink.current %}aria-current="page"{% endif %}
+                      >
+                        {{ childlink.title | escape }}
+                      </a>
+                    {%- else -%}
+                      <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
+                        <summary
+                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                          class="header__menu-item link link--text list-menu__item focus-inset caption-large"
+                        >
+                          <span>{{ childlink.title | escape }}</span>
+                          {% render 'icon-caret' %}
+                        </summary>
+                        <ul
+                          id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}"
+                          class="header__submenu list-menu motion-reduce"
+                        >
+                          {%- for grandchildlink in childlink.links -%}
+                            {%- assign grandchild_skip = false -%}
+                            {%- if grandchildlink.type == 'collection_link' and grandchildlink.object and grandchildlink.object.all_products_count == 0 -%}
+                              {%- assign grandchild_skip = true -%}
+                            {%- endif -%}
+
+                            {%- unless grandchild_skip -%}
+                            <li>
+                              <a
+                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                href="{{ grandchildlink.url }}"
+                                class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
+                                {% if grandchildlink.current %}aria-current="page"{% endif %}
+                              >
+                                {{ grandchildlink.title | escape }}
+                              </a>
+                            </li>
+                            {%- endunless -%}
+                          {%- endfor -%}
+                        </ul>
+                      </details>
+                    {%- endif -%}
+                  </li>
+                  {%- endunless -%}
+                {%- endfor -%}
+              </ul>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}aria-current="page"{% endif %}
+          >
+            <span
+              {%- if link.current %}class="header__active-menu-item"{% endif -%}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+      {%- endunless -%}
+    {%- endfor -%}
+  </ul>
+</nav>
