@@ -48,7 +48,7 @@
         "image": "shopify://shop_images/coin_bezels.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-2",
@@ -61,24 +61,6 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "slide-0": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/jewelry_box.jpg",
-            "heading": "<strong>FLINTSKI JEWELRY</strong>",
-            "heading_size": "h1",
-            "subheading": "<strong>Latest coin bezels, motif, and jewelry.</strong>",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 10,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "left"
-          }
-        },
         "slide_Fx7z8y": {
           "type": "slide",
           "settings": {
@@ -117,7 +99,6 @@
         }
       },
       "block_order": [
-        "slide-0",
         "slide_Fx7z8y",
         "slide_WEW6jR"
       ],
