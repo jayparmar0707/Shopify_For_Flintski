@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow": {
@@ -6,10 +15,10 @@
         "slide-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/jewelry_box.jpg",
-            "heading": "<strong>FLINTSKI JEWELRY<\/strong>",
+            "image": "shopify://shop_images/jewelry_box.jpg",
+            "heading": "<strong>FLINTSKI JEWELRY</strong>",
             "heading_size": "h1",
-            "subheading": "<strong>Latest coin bezels, motif, and jewelry.<\/strong>",
+            "subheading": "<strong>Latest coin bezels, motif, and jewelry.</strong>",
             "button_label": "",
             "link": "",
             "button_style_secondary": false,
@@ -24,10 +33,10 @@
         "slide_Fx7z8y": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/engagement-rings-resized.jpg",
+            "image": "shopify://shop_images/engagement-rings-resized.jpg",
             "heading": "Engagement Rings",
             "heading_size": "h1",
-            "subheading": "<strong>Shop from our pristine collection of engagement rings<\/strong>",
+            "subheading": "<strong>Shop from our pristine collection of engagement rings</strong>",
             "button_label": "Shop now",
             "link": "",
             "button_style_secondary": false,
@@ -42,7 +51,7 @@
         "slide_WEW6jR": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/coins.jpg",
+            "image": "shopify://shop_images/coins.jpg",
             "heading": "Coin Bezels",
             "heading_size": "h1",
             "subheading": "Shop from our wide collection of coin bezels and bullion bars",
@@ -80,7 +89,7 @@
         "featured_collection_mDbtRT": {
           "type": "featured_collection",
           "settings": {
-            "collection": "main-coin-bezels"
+            "collection": "coin-bezels"
           }
         },
         "featured_collection_rLqhdH": {
@@ -92,7 +101,7 @@
         "featured_collection_BeVrDH": {
           "type": "featured_collection",
           "settings": {
-            "collection": "main-rings"
+            "collection": "rings"
           }
         }
       },
