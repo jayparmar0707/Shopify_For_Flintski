@@ -20,6 +20,9 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "custom_css": [
+        ".card__information {align-content: end;}"
+      ],
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
