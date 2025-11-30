@@ -1,8 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/LogoInverted.png",
+    "logo": "shopify://shop_images/LogoInverted.png",
     "logo_width": 140,
-    "favicon": "shopify:\/\/shop_images\/icons8-one-ring-32.png",
+    "favicon": "shopify://shop_images/icons8-one-ring-32.png",
     "type_header_font": "archivo_n7",
     "heading_scale": 110,
     "type_body_font": "questrial_n4",
@@ -99,7 +108,7 @@
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-1",
     "brand_headline": "FLINTSKI JEWELRY AND ACCESSORIES LLC",
-    "brand_description": "<p><strong>Contact Us <br\/><\/strong>Monday to Friday -  <strong>8:00 AM to 5:00 PM<br\/><\/strong>Phone: <strong>+1-662-226-1685 <\/strong><br\/>Email:<strong> info@flintski.co<\/strong><br\/>Address:<strong> 23491 Highway 8 East, Grenada, MS 38901<\/strong><\/p>",
+    "brand_description": "<p><strong>Contact Us <br/></strong>Monday to Friday -  <strong>8:00 AM to 5:00 PM CST (UTC - 6)<br/></strong>Phone: <strong>+1-662-226-1685 </strong><br/>Email:<strong> flintski.jewelry@gmail.com</strong></p>",
     "brand_image_width": 130,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -119,7 +128,7 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
-    "checkout_logo_image": "shopify:\/\/shop_images\/LogoDubielBlack.jpg",
+    "checkout_logo_image": "shopify://shop_images/LogoDubielBlack.jpg",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
     "checkout_accent_color": "#000000",
@@ -139,9 +148,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -356,7 +363,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-1",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
