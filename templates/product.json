@@ -81,6 +81,9 @@
     },
     "related-products": {
       "type": "related-products",
+      "custom_css": [
+        ".card--card.card--media .card__media .media img {padding: 1em; object-fit: contain;}"
+      ],
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
