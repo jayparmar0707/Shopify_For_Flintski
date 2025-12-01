@@ -135,10 +135,10 @@
         "featured_collection_BeVrDH"
       ],
       "custom_css": [
-        "/* keep your image behavior */.card--card.card--media .card__media .media img {padding: 1em; object-fit: contain;}",
-        ".card--card.card {transition: background-color .2s ease, transform .2s ease;}",
-        ".card--card.card:hover {background-color: #000; cursor: zoom-in; /* mouse pointer */}",
-        ".card--card.card:hover .media img {transform: scale(1.03); /* actual zoom effect */}"
+        ".card__media .media img {padding: 1em; object-fit: contain;}",
+        ".card {transition: background 0.2s ease, transform 0.2s ease;}",
+        ".card:hover {background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%); cursor: zoom-in;}",
+        ".card:hover .media img {transform: scale(1.03);}"
       ],
       "settings": {
         "title": "Collections",
