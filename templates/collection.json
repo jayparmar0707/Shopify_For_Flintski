@@ -21,7 +21,9 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "custom_css": [
-        "/* Text area of the product card */.card__information {align-content: flex-end; /* content sits at the bottom */ height: 100%;}"
+        "/* Text area of the product card */.card__content {display: grid; /* grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr); */ padding: 1rem; width: 100%; align-items: flex-end; flex-grow: 1;}",
+        ".card__information {align-items: end}",
+        ".card__media {align-self: center}"
       ],
       "settings": {
         "products_per_page": 24,
