@@ -135,7 +135,10 @@
         "featured_collection_BeVrDH"
       ],
       "custom_css": [
-        "/* keep your image behavior */.card--card.card--media .card__media .media img {padding: 1em; object-fit: contain;}"
+        "/* keep your image behavior */.card--card.card--media .card__media .media img {padding: 1em; object-fit: contain;}",
+        ".card--card.card {transition: background-color .2s ease, transform .2s ease;}",
+        ".card--card.card:hover {background-color: #000; cursor: zoom-in; /* mouse pointer */}",
+        ".card--card.card:hover .media img {transform: scale(1.03); /* actual zoom effect */}"
       ],
       "settings": {
         "title": "Collections",
@@ -153,6 +156,23 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "slide_HVGpQy": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_Fx7z8y": {
           "type": "slide",
           "settings": {
@@ -191,6 +211,7 @@
         }
       },
       "block_order": [
+        "slide_HVGpQy",
         "slide_Fx7z8y",
         "slide_WEW6jR"
       ],
