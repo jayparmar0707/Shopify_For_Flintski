@@ -134,6 +134,9 @@
         "featured_collection_rLqhdH",
         "featured_collection_BeVrDH"
       ],
+      "custom_css": [
+        "/* keep your image behavior */.card--card.card--media .card__media .media img {padding: 1em; object-fit: contain;}"
+      ],
       "settings": {
         "title": "Collections",
         "heading_size": "h1",
