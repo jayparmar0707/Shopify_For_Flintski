@@ -58,6 +58,46 @@
         "show_text_below": true
       }
     },
+    "collection_list_CKyQxi": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_mDbtRT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "main-coin-bezels"
+          }
+        },
+        "featured_collection_rLqhdH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "main-coin-motif"
+          }
+        },
+        "featured_collection_BeVrDH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "main-rings"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_mDbtRT",
+        "featured_collection_rLqhdH",
+        "featured_collection_BeVrDH"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -131,46 +171,6 @@
         "accessibility_info": ""
       }
     },
-    "collection_list_CKyQxi": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_mDbtRT": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "main-coin-bezels"
-          }
-        },
-        "featured_collection_rLqhdH": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "main-coin-motif"
-          }
-        },
-        "featured_collection_BeVrDH": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "main-rings"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_mDbtRT",
-        "featured_collection_rLqhdH",
-        "featured_collection_BeVrDH"
-      ],
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "featured_collection_etDcak": {
       "type": "featured-collection",
       "custom_css": [
@@ -205,12 +205,61 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_YackNm": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_KakxCc": {
+          "type": "heading",
+          "settings": {
+            "heading": "COIN JEWELRY, MADE PERSONAL",
+            "heading_size": "h1"
+          }
+        },
+        "text_HBXgh8": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>Turn Your Coins Into Wearable Stories</strong></em></p><p>Flintski coin bezels and jewelry are crafted to protect your coins and keep them close everyday, not just in a safe.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_JqLCcH": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Coin Bezels",
+            "button_link": "shopify://collections/main-coin-bezels",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_KakxCc",
+        "text_HBXgh8",
+        "button_JqLCcH"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/coin_bezels.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "ambient",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner_49VnWf",
-    "slideshow",
     "collection_list_CKyQxi",
-    "featured_collection_etDcak"
+    "slideshow",
+    "featured_collection_etDcak",
+    "image_with_text_YackNm"
   ]
 }
