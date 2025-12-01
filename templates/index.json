@@ -138,7 +138,8 @@
         ".card__media .media img {padding: 1em; object-fit: contain;}",
         ".card {transition: background 0.2s ease, transform 0.2s ease;}",
         ".card:hover {background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%); cursor: zoom-in;}",
-        ".card:hover .media img {transform: scale(1.03);}"
+        ".card:hover .media img {transform: scale(1.03);}",
+        ".card__media .media img {border-radius: 50px;}"
       ],
       "settings": {
         "title": "Collections",
@@ -146,7 +147,7 @@
         "image_ratio": "square",
         "columns_desktop": 3,
         "color_scheme": "",
-        "show_view_all": false,
+        "show_view_all": true,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 36,
@@ -229,11 +230,12 @@
     "featured_collection_etDcak": {
       "type": "featured-collection",
       "custom_css": [
-        ".card--card.card--media {display: flex; flex-direction: column; height: 100%;}",
-        ".card--card.card--media > .card__inner {flex: 1 1 auto; position: relative; display: flex;}",
-        ".card--card.card--media > .card__content {flex: 0 0 auto;}",
-        ".card--card.card--media .card__media,.card--card.card--media .card__media .media {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}",
-        ".card--card.card--media .card__media .media img {padding: 1em; object-fit: contain;}"
+        ".card--media > .card__inner {flex: 1 1 auto; position: relative; display: flex;}",
+        ".card__content {flex: 0 0 auto;}",
+        ".card__media .media img {padding: 1rem; object-fit: contain;}",
+        ".card {transition: background 0.2s ease, transform 0.2s ease;}",
+        ".card:hover {background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%); cursor: zoom-in;}",
+        ".card:hover .media img {transform: scale(1.03);}"
       ],
       "settings": {
         "title": "Best Sellers",
