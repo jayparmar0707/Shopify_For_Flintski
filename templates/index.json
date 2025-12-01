@@ -175,7 +175,7 @@
       "type": "featured-collection",
       "custom_css": [
         ".card--card.card--media > .card__inner {flex: 1 1 auto;}",
-        ".card--card.card--media > .card__content {flex: 1 1 auto;}",
+        ".card--card.card--media > .card__content {flex: 0 0 auto;}",
         ".card--card.card--media .card__media,.card--card.card--media .card__media .media {position: static; width: 100%; height: 100%;}",
         ".card--card.card--media .card__media .media img {padding: 1em; object-fit: contain;}",
         ".card--card .badge {padding: 0.5rem 2rem 0.6rem;}"
