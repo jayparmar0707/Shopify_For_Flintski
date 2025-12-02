@@ -41,7 +41,8 @@
         "button_JqLCcH"
       ],
       "custom_css": [
-        ".button:hover {background-color: black; color: white;}"
+        ".button:hover {background-color: #EFF0F5; color: black;}",
+        ".button {background-color: black; color: #EFF0F5;}"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
@@ -142,7 +143,8 @@
         ".card {transition: background 0.2s ease, transform 0.2s ease;}",
         ".card:hover {background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%); cursor: zoom-in;}",
         ".card:hover .media img {transform: scale(1.03);}",
-        ".card__media .media img {border-radius: 50px;}"
+        ".card__media .media img {border-radius: 50px;}",
+        ".button:hover {background-color: #eff0f5; color: black;}"
       ],
       "settings": {
         "title": "Collections",
@@ -186,7 +188,7 @@
             "heading_size": "h1",
             "subheading": "Shop from our wide collection of coin bezels and bullion bars",
             "button_label": "Shop now",
-            "link": "",
+            "link": "shopify://collections/main-coin-bezels",
             "button_style_secondary": false,
             "box_align": "bottom-left",
             "show_text_box": true,
@@ -200,6 +202,9 @@
       "block_order": [
         "slide_Fx7z8y",
         "slide_WEW6jR"
+      ],
+      "custom_css": [
+        ".button:hover {background-color: #eff0f5; color: black;}"
       ],
       "settings": {
         "layout": "full_bleed",
