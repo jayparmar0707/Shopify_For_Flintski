@@ -18,22 +18,24 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  /* Optional: keep this if you want 0 padding in content */
   .card--media .card__inner .card__content {
-    padding: 0rem ;
-    /* border-radius:5%; */
+    padding: 0;
   }
 
-  .card--media .card__inner .card__content .badge {
-    /* padding: .5rem 0.6rem 0.6rem; */
-    /* border-radius:40%; */
+  /* Rounded image wrapper */
+  .card__media {
+    border-radius: 5%;
+    overflow: hidden;
   }
 
   .card__media .media img {
     object-fit: contain;
     width: 100%;
     height: 100%;
-    border-radius:5%;
     transition: transform 0.5s ease;
+    /* no border-radius here, wrapper handles it */
   }
 
   .card {
@@ -44,11 +46,11 @@
     background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%);
   }
 
-  .card:hover .media img {
-    border-radius:5%;
+  .card:hover .card__media .media img {
     transform: scale(1.03);
   }
 {%- endstyle -%}
+
 
 
 <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
