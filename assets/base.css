@@ -3508,9 +3508,9 @@ details-disclosure > details {
 
 /* Quick add button: black default, invert on hover */
 .quick-add .quick-add__submit.button--secondary {
-  /* background-color: #fff; */
+  background-color: #fff;
   color: #000;
-  border-color: #000;
+  /* border-color: #000; */
 }
 
 /* Hover / focus: white background, black text */
@@ -3518,7 +3518,7 @@ details-disclosure > details {
 .quick-add .quick-add__submit.button--secondary:focus-visible {
   
 
-  /* background-color: #000; */
+  background-color: #000;
   color: #fff;
-  border-color: #000;
+  /* border-color: #000; */
 }
