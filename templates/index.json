@@ -41,8 +41,8 @@
         "button_JqLCcH"
       ],
       "custom_css": [
-        ".button:hover {background-color: #EFF0F5; color: black;}",
-        ".button {background-color: black; color: #EFF0F5;}"
+        ".button:hover {background-color: #eff0f5; color: black;}",
+        ".button {background-color: black; color: #eff0f5;}"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
@@ -219,7 +219,6 @@
     },
     "featured_collection_etDcak": {
       "type": "featured-collection",
-      "disabled": true,
       "custom_css": [
         ".card--media > .card__inner {flex: 1 1 auto; position: relative; display: flex;}",
         ".card__content {flex: 0 0 auto;}",
