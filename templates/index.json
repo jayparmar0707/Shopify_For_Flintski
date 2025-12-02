@@ -139,12 +139,12 @@
         "featured_collection_BeVrDH"
       ],
       "custom_css": [
-        ".card__media .media img {padding: 1em; object-fit: contain;}",
+        ".card__media .media img {padding: 1em; object-fit: contain; border-radius: 10%;}",
         ".card {transition: background 0.2s ease, transform 0.2s ease;}",
         ".card:hover {background: black; cursor: zoom-in;}",
         ".card:hover a {color: white;}",
         ".card:hover .media img {transform: scale(1.03);}",
-        ".card__media .media img {border-radius: 10%;}",
+        ".card__media .media img {}",
         ".button:hover {background-color: #eff0f5; color: black;}"
       ],
       "settings": {
@@ -223,7 +223,7 @@
       "custom_css": [
         ".card--media > .card__inner {flex: 1 1 auto; position: relative; display: flex;}",
         ".card__content {flex: 0 0 auto;}",
-        ".card__media .media img {padding: 1rem; object-fit: contain;}",
+        ".card__media .media img {padding: 1rem; object-fit: contain; border-radius: 10%;}",
         ".card {transition: background 0.2s ease, transform 0.2s ease;}",
         ".card:hover {background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%); cursor: zoom-in;}",
         ".card:hover .media img {transform: scale(1.03);}"
@@ -235,8 +235,8 @@
         "show_description": false,
         "description_style": "body",
         "collection": "best-sellers",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "products_to_show": 3,
+        "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
@@ -246,8 +246,8 @@
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
+        "show_rating": true,
+        "enable_quick_add": true,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
