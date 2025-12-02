@@ -19,15 +19,7 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "custom_css": [
-        ".card--media > .card__inner {flex: 1 1 auto; position: relative; display: flex;}",
-        ".card__content {flex: 0 0 auto;}",
-        ".card__media .media img {padding: 1rem; object-fit: contain;}",
-        ".card {transition: background 0.2s ease, transform 0.2s ease;}",
-        ".card:hover {background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%); cursor: zoom-in;}",
-        ".card:hover .media img {transform: scale(1.03);}",
-        ".card--media .card__inner .card__content {padding: 1.2rem;}"
-      ],
+      "custom_css": [],
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
