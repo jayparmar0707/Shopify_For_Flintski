@@ -6,14 +6,19 @@
     .collection-hero--with-image .collection-hero__inner {
       padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
     }
-  }
 
-  /* Center collection title + description on small screens */
+    /* Center collection title + description on small screens */
     .collection-hero__text-wrapper {
       text-align: center;
       margin-left: auto;
       margin-right: auto;
     }
+
+    /* Hide image on mobile */
+    .collection-hero__image-container {
+      display: none;
+    }
+  }
 
   /* Make collection image contained and centered */
   .collection-hero__image-container {
