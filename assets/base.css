@@ -3505,3 +3505,18 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+/* Quick add button: black default, invert on hover */
+.quick-add .quick-add__submit.button--secondary {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* Hover / focus: white background, black text */
+.quick-add .quick-add__submit.button--secondary:hover,
+.quick-add .quick-add__submit.button--secondary:focus-visible {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
