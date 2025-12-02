@@ -29,36 +29,42 @@
       <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
         {{ section.settings.heading }}
       </h2>
+
       <ul
         class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
         role="list"
       >
-        {%- assign has_main = false -%}
-          {%- for recommendation in recommendations.products -%}
-            {%- if recommendation.tags contains 'main-product' -%}
-              {%- assign has_main = true -%}
-            {%- endif -%}
-          {%- endfor -%}
+        {%- comment -%}
+          Max number of products to show.
+          If your section has a "products_to_show" setting, this will honor it.
+        {%- endcomment -%}
+        {% assign max_products = section.settings.products_to_show | default: recommendations.products_count %}
+        {% assign shown = 0 %}
 
-          {%- if has_main -%}
-            {%- comment -%} Only show products tagged main-product {%- endcomment -%}
-            {%- for recommendation in recommendations.products -%}
-              {%- if recommendation.tags contains 'main-product' -%}
-                <li class="grid__item">
-                  {% render 'card-product',
-                    card_product: recommendation,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating
-                  %}
-                </li>
+        {%- comment -%} 1) Show all main-product first {%- endcomment -%}
+        {%- for recommendation in recommendations.products -%}
+          {%- if recommendation.tags contains 'main-product' and shown < max_products -%}
+            <li class="grid__item">
+              {% render 'card-product',
+                card_product: recommendation,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating
+              %}
+            </li>
+            {% assign shown = shown | plus: 1 %}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- comment -%} 2) Fill remaining slots with non-main products (variants) {%- endcomment -%}
+        {%- if shown < max_products -%}
+          {%- for recommendation in recommendations.products -%}
+            {%- unless recommendation.tags contains 'main-product' -%}
+              {%- if shown >= max_products -%}
+                {% break %}
               {%- endif -%}
-            {%- endfor -%}
-          {%- else -%}
-            {%- comment -%} Fallback: show all recommendations {%- endcomment -%}
-            {%- for recommendation in recommendations.products -%}
               <li class="grid__item">
                 {% render 'card-product',
                   card_product: recommendation,
@@ -69,11 +75,13 @@
                   show_rating: section.settings.show_rating
                 %}
               </li>
-            {%- endfor -%}
-          {%- endif -%}
-
+              {% assign shown = shown | plus: 1 %}
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endif -%}
       </ul>
     {% endif %}
+
   </product-recommendations>
   {% if section.settings.image_shape == 'arch' %}
     {% render 'mask-arch' %}
