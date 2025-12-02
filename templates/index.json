@@ -40,6 +40,9 @@
         "text_HBXgh8",
         "button_JqLCcH"
       ],
+      "custom_css": [
+        ".button:hover {background-color: black; color: white;}"
+      ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/coin_bezels.jpg",
