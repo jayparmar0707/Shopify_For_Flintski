@@ -211,6 +211,7 @@
     },
     "featured_collection_etDcak": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         ".card--media > .card__inner {flex: 1 1 auto; position: relative; display: flex;}",
         ".card__content {flex: 0 0 auto;}",
