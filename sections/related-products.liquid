@@ -20,7 +20,7 @@
   }
 
   /* Scoped card layout to this section */
-  .section-{{ section.id }}-padding .card--media > .card__inner {
+  .card--media > .card__inner {
     flex: 1 1 auto;
     position: relative;
     display: flex;
@@ -28,12 +28,12 @@
     overflow: hidden;       /* hide zoom overflow */
   }
 
-  .section-{{ section.id }}-padding .card__content {
+  .card__content {
     flex: 0 0 auto;
     padding: 1rem;
   }
 
-  .section-{{ section.id }}-padding .card__media .media img {
+  .card__media .media img {
     padding: 1rem;
     object-fit: contain;
     width: 100%;
@@ -41,16 +41,16 @@
     transition: transform 0.2s ease;
   }
 
-  .section-{{ section.id }}-padding .card {
+  .card {
     transition: background 0.2s ease, transform 0.2s ease;
   }
 
-  .section-{{ section.id }}-padding .card:hover {
+  .card:hover {
     background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%);
     cursor: zoom-in;
   }
 
-  .section-{{ section.id }}-padding .card:hover .media img {
+  .card:hover .media img {
     transform: scale(1.03);
   }
 {%- endstyle -%}
