@@ -31,11 +31,21 @@
       }
     }
 
-    variant-selects label:hover {
-        background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%);
-        cursor: zoom-in;
-        font-weight: bold;
+    /* Selected variant: always bold (no hover effect needed) */
+    variant-selects input:checked + label {
+      font-weight: bold;
+      /* optional: keep your normal background here */
+      /* background: #f3f4f6; */
+      cursor: default;
     }
+
+    /* Only NON-selected variants get the hover gradient */
+    variant-selects input:not(:checked) + label:hover {
+      background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%);
+      cursor: zoom-in;
+      font-weight: bold;
+    }
+
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
