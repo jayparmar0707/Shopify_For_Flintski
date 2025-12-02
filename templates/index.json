@@ -141,8 +141,9 @@
       "custom_css": [
         ".card__media .media img {padding: 1em; object-fit: contain;}",
         ".card {transition: background 0.2s ease, transform 0.2s ease;}",
-        ".card:hover {background: black; cursor: zoom-in; color: white;}",
-        ".card:hover .media img {transform: scale(1.03);}",
+        ".card:hover {background: black; cursor: zoom-in;}",
+        ".card:hover card__information {color:white;}",
+        " .card:hover .media img {transform: scale(1.03);}",
         ".card__media .media img {border-radius: 10%;}",
         ".button:hover {background-color: #eff0f5; color: black;}"
       ],
