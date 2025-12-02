@@ -27,11 +27,11 @@
         ".card {transition: background 0.2s ease, transform 0.2s ease;}",
         ".card:hover {background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 45%, #4b5563 100%); cursor: zoom-in;}",
         ".card:hover .media img {transform: scale(1.03);}",
-        ".card--media .card__inner .card__content {padding:1.2rem;}"
+        ".card--media .card__inner .card__content {padding: 1.2rem;}"
       ],
       "settings": {
         "products_per_page": 24,
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
