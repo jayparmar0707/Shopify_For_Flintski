@@ -14,29 +14,53 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  /* Card image */
+  .card__media .media {
+    border-radius: 10%;
+    overflow: hidden; /* keep zoomed image inside rounded corners */
+  }
+
   .card__media .media img {
     padding: 1em;
     object-fit: contain;
     border-radius: 10%;
+    transition: transform 0.2s ease;
   }
+
+  /* Card hover */
   .card {
     transition: background 0.2s ease, transform 0.2s ease;
   }
+
   .card:hover {
-    background: linear-gradient(135deg, #ced4da 0%, #adb5bd 20%, #6c757d 40%, #495057: 60%, #343a40 80%, #212529 100%);;
+    background: linear-gradient(
+      135deg,
+      #ced4da 0%,
+      #adb5bd 20%,
+      #6c757d 40%,
+      #495057 60%,
+      #343a40 80%,
+      #212529 100%
+    );
     cursor: zoom-in;
   }
+
   .card:hover a {
-    color: white;
+    color: #ffffff;
   }
+
   .card:hover .media img {
     transform: scale(1.03);
   }
-  .button:hover {
+
+  /* Button hover (scoped to cards, optional) */
+  .card .button:hover {
     background-color: #eff0f5;
-    color: black;
+    color: #000000;
   }
 {%- endstyle -%}
+
 
 {%- liquid
   assign columns_mobile_int = section.settings.columns_mobile | plus: 0
