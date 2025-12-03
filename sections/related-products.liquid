@@ -53,130 +53,15 @@
   } */
 {%- endstyle -%}
 
-{%- liquid
-  assign anchor_product = nil
 
-  if product
-    # Product page: use the current product
-    assign anchor_product = product
-  elsif cart != empty
-    # Cart page: use the first item in the cart
-    assign anchor_product = cart.items[0].product
-  endif
--%}
-
-
-{% if anchor_product %}
-
-  {% comment %}
-    Product page: use current product
-    Cart page: use ALL unique cart item products (one block per product)
-  {% endcomment %}
-
-  {% if product %}
-    {%- comment -%} === PRODUCT PAGE MODE (unchanged behavior) === {%- endcomment -%}
-    <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
-      <product-recommendations
-        class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-        data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
-      >
-        {% if recommendations.performed and recommendations.products_count > 0 %}
-          <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-            {{ section.settings.heading }}
-          </h2>
-
-          <ul
-            class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-            role="list"
-          >
-            {%- comment -%}
-              Max number of products to show.
-              Honors "products_to_show" setting.
-            {%- endcomment -%}
-            {% assign max_products = section.settings.products_to_show | default: recommendations.products_count %}
-            {% assign shown = 0 %}
-
-            {%- comment -%} 1) Show all main-product first {%- endcomment -%}
-            {%- for recommendation in recommendations.products -%}
-              {%- if recommendation.tags contains 'main-product' and shown < max_products -%}
-                <li class="grid__item">
-                  {% render 'card-product',
-                    card_product: recommendation,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating
-                  %}
-                </li>
-                {% assign shown = shown | plus: 1 %}
-              {%- endif -%}
-            {%- endfor -%}
-
-            {%- comment -%} 2) Fill remaining slots with non-main products (variants) {%- endcomment -%}
-            {%- if shown < max_products -%}
-              {%- for recommendation in recommendations.products -%}
-                {%- unless recommendation.tags contains 'main-product' -%}
-                  {%- if shown >= max_products -%}{% break %}{%- endif -%}
-                  <li class="grid__item">
-                    {% render 'card-product',
-                      card_product: recommendation,
-                      media_aspect_ratio: section.settings.image_ratio,
-                      image_shape: section.settings.image_shape,
-                      show_secondary_image: section.settings.show_secondary_image,
-                      show_vendor: section.settings.show_vendor,
-                      show_rating: section.settings.show_rating
-                    %}
-                  </li>
-                  {% assign shown = shown | plus: 1 %}
-                {%- endunless -%}
-              {%- endfor -%}
-            {%- endif -%}
-          </ul>
-        {% endif %}
-      </product-recommendations>
-
-      {% if section.settings.image_shape == 'arch' %}
-        {% render 'mask-arch' %}
-      {%- endif -%}
-    </div>
-
-  {% elsif cart != empty %}
-    {%- comment -%} === CART PAGE MODE (ALL CART ITEMS) === {%- endcomment -%}
-    <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
-      <div class="page-width section-{{ section.id }}-padding">
-        {# Optional: cart-specific heading – can change via Theme Editor #}
-        <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.heading }}
-        </h2>
-
-        {%- assign used_products = ',' -%}
-        {%- for item in cart.items -%}
-          {%- assign pid = item.product.id | append: '' -%}
-          {%- assign token = ',' | append: pid | append: ',' -%}
-
-          {%- unless used_products contains token -%}
-            {%- assign used_products = used_products | append: token -%}
-
-            <product-recommendations
-              class="related-products section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ item.product.id }}&limit={{ section.settings.products_to_show }}"
-            >
-              {# empty here; Dawn JS will fetch and inject recommendations
-                using the SAME section file (this one), but in "product mode" #}
-            </product-recommendations>
-
-          {%- endunless -%}
-        {%- endfor -%}
-      </div>
-    </div>
-  {% endif %}
-
-  
-  {% comment %} <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
-    <product-recommendations class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}" >
+{% if product %}
+  {%- comment -%} === PRODUCT PAGE MODE (single recommendations block) === {%- endcomment -%}
+  <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
+    <product-recommendations
+      class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
+    >
       {% if recommendations.performed and recommendations.products_count > 0 %}
-
         <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
           {{ section.settings.heading }}
         </h2>
@@ -185,7 +70,10 @@
           class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
           role="list"
         >
-          {%- comment -%} Max number of products {%- endcomment -%}
+          {%- comment -%}
+            Max number of products to show.
+            Honors "products_to_show" setting.
+          {%- endcomment -%}
           {% assign max_products = section.settings.products_to_show | default: recommendations.products_count %}
           {% assign shown = 0 %}
 
@@ -206,7 +94,7 @@
             {%- endif -%}
           {%- endfor -%}
 
-          {%- comment -%} 2) Fill remaining slots with non-main products {%- endcomment -%}
+          {%- comment -%} 2) Fill remaining slots with non-main products (variants) {%- endcomment -%}
           {%- if shown < max_products -%}
             {%- for recommendation in recommendations.products -%}
               {%- unless recommendation.tags contains 'main-product' -%}
@@ -232,8 +120,36 @@
     {% if section.settings.image_shape == 'arch' %}
       {% render 'mask-arch' %}
     {%- endif -%}
-  </div> {% endcomment %}
+  </div>
+
+{% elsif cart != empty %}
+  {%- comment -%} === CART PAGE MODE (one block per UNIQUE cart product) === {%- endcomment -%}
+  <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
+    <div class="page-width section-{{ section.id }}-padding">
+      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+
+      {%- assign used_products = ',' -%}
+      {%- for item in cart.items -%}
+        {%- assign pid = item.product.id | append: '' -%}
+        {%- assign token = ',' | append: pid | append: ',' -%}
+
+        {%- unless used_products contains token -%}
+          {%- assign used_products = used_products | append: token -%}
+
+          <product-recommendations
+            class="related-products section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ item.product.id }}&limit={{ section.settings.products_to_show }}"
+          >
+          </product-recommendations>
+
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
 {% endif %}
+
 
 
 {% schema %}
