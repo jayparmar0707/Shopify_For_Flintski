@@ -53,13 +53,21 @@
   } */
 {%- endstyle -%}
 
+{%- liquid
+  assign anchor_product = nil
 
-{% if product %}
-  {%- comment -%} === PRODUCT PAGE MODE (single recommendations block) === {%- endcomment -%}
+  if product
+    assign anchor_product = product
+  elsif cart != empty
+    assign anchor_product = cart.items[0].product
+  endif
+-%}
+
+{% if anchor_product %}
   <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
     <product-recommendations
       class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-      data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
+      data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ anchor_product.id }}&limit={{ section.settings.products_to_show }}"
     >
       {% if recommendations.performed and recommendations.products_count > 0 %}
         <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
@@ -121,34 +129,8 @@
       {% render 'mask-arch' %}
     {%- endif -%}
   </div>
-
-{% elsif cart != empty %}
-  {%- comment -%} === CART PAGE MODE (one block per UNIQUE cart product) === {%- endcomment -%}
-  <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
-    <div class="page-width section-{{ section.id }}-padding">
-      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
-      </h2>
-
-      {%- assign used_products = ',' -%}
-      {%- for item in cart.items -%}
-        {%- assign pid = item.product.id | append: '' -%}
-        {%- assign token = ',' | append: pid | append: ',' -%}
-
-        {%- unless used_products contains token -%}
-          {%- assign used_products = used_products | append: token -%}
-
-          <product-recommendations
-            class="related-products section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ item.product.id }}&limit={{ section.settings.products_to_show }}"
-          >
-          </product-recommendations>
-
-        {%- endunless -%}
-      {%- endfor -%}
-    </div>
-  </div>
 {% endif %}
+
 
 
 
