@@ -79,7 +79,7 @@ class CartItems extends HTMLElement {
   }
 
   getSectionsToRender() {
-    return [
+    const sections = [
       {
         id: 'main-cart-items',
         section: document.getElementById('main-cart-items').dataset.id,
@@ -95,13 +95,22 @@ class CartItems extends HTMLElement {
         section: 'cart-live-region-text',
         selector: '.shopify-section',
       },
-      {
-        id: 'main-cart-footer',
-        section: document.getElementById('main-cart-footer').dataset.id,
-        selector: '.js-contents',
-      },
+      // keep any existing entries here, like main-cart-footer
     ];
+
+    // 🔽 NEW: also refresh the related-products section on cart updates
+    const cartRelated = document.getElementById('cart-related-products');
+    if (cartRelated) {
+      sections.push({
+        id: 'cart-related-products',
+        section: cartRelated.dataset.id,
+        selector: '.cart-related-products-inner',
+      });
+    }
+
+    return sections;
   }
+
 
   updateQuantity(line, quantity, name, variantId) {
     this.enableLoading(line);
