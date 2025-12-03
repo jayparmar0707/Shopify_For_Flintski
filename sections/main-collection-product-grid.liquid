@@ -61,6 +61,10 @@
   .card:hover > .card__content {
     color:white
   }
+  /* Optional: ensure all text inside that block is white too */
+  .card:hover > .card__content * {
+    color: #ffffff;
+  }
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
