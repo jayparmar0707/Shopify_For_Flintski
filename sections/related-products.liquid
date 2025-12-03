@@ -43,6 +43,14 @@
   .card:hover .card__media .media img {
     transform: scale(1.03);
   }
+
+  .card:hover > .card__content {
+    color:#f8f9fa
+  }
+  /* Optional: ensure all text inside that block is white too */
+  .card:hover > .card__content * {
+    color: #f8f9fa;
+  }
 {%- endstyle -%}
 
 
