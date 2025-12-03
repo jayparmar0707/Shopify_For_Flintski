@@ -23,6 +23,48 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 
+{% style %}
+  .card--media .card__inner .card__content {
+    padding: 1.50rem 1.8rem;
+  }
+
+
+  .card__media .media img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .card {
+    transition: background 0.5s ease, transform 0.5s ease;
+  }
+
+  .card:hover {
+    background: linear-gradient(
+      135deg,
+      #dee2e6 0%,
+      #ced4da 20%,
+      #adb5bd 40%,
+      #6c757d 60%,
+      #495057 80%,
+      #343a40 100%
+    );  
+  }
+
+  .card:hover .card__media .media img {
+    transform: scale(1.03);
+  }
+
+  .card:hover > .card__content {
+    color:#f8f9fa
+  }
+  /* Optional: ensure all text inside that block is white too */
+  .card:hover > .card__content * {
+    color: #f8f9fa;
+  }
+{% endstyle %}
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
